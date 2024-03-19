@@ -13,11 +13,13 @@ const SheetTrigger = SheetPrimitive.Trigger
 
 const SheetClose = SheetPrimitive.Close
 
-const SheetPortal = ({
+const SheetPortal: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className,
   ...props
-}: SheetPrimitive.DialogPortalProps) => (
-  <SheetPrimitive.Portal className={cn(className)} {...props} />
+}) => (
+  <SheetPrimitive.Portal {...props}>
+    <div className={cn(className)} />
+  </SheetPrimitive.Portal>
 )
 SheetPortal.displayName = SheetPrimitive.Portal.displayName
 
